@@ -82,13 +82,14 @@
         button {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 15px 30px; /* Increased padding for larger touch target */
             background-color: #007bff;
             color: white;
             text-decoration: none;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 18px; /* Increased font size for better readability */
             transition: background-color 0.3s ease, transform 0.2s ease; 
         }
 
@@ -134,11 +135,25 @@
             p {
                 font-size: 16px;
             }
+            button {
+                padding: 12px 24px; /* Slightly reduced padding for smaller screens */
+                font-size: 16px; /* Reduced font size for smaller screens */
+            }
         }
 
         @media (max-width: 480px) { 
             .container {
                 padding: 15px; 
+            }
+            h1 {
+                font-size: 20px; /* Reduced font size for smaller screens */
+            }
+            p {
+                font-size: 14px; /* Reduced font size for smaller screens */
+            }
+            button {
+                padding: 10px 20px; /* Slightly reduced padding for smaller screens */
+                font-size: 14px; /* Reduced font size for smaller screens */
             }
         }
     </style>

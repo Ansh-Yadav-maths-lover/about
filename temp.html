@@ -37,13 +37,16 @@
 
         /* Container Styling */
         .container {
-            max-width: 90%; /* Increased max-width for better responsiveness */
+            width: 90vw;
+            max-width: 550px;
+            height: 90vw;
+            max-height: 550px;
             padding: 40px;
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease; 
         }
 
         .container:hover {
@@ -52,7 +55,8 @@
 
         /* Instagram Logo Styling */
         .insta-logo {
-            width: 130px; 
+            width: 30%;
+            max-width: 130px; 
             margin-bottom: 25px;
             animation: logo-pulse 1.8s infinite; 
             transition: filter 0.3s ease; 
@@ -123,11 +127,12 @@
         /* Media Queries for Responsiveness */
         @media (max-width: 768px) { 
             .container {
-                max-width: 95%; /* Increased max-width for smaller screens */
+                width: 80vw; /* Ensure container remains square on smaller screens */
+                height: 80vw;
                 padding: 20px; 
             }
             .insta-logo {
-                width: 100px; /* Reduced size for smaller screens */
+                width: 80px; 
             }
             h1 {
                 font-size: 24px;
@@ -143,11 +148,12 @@
 
         @media (max-width: 480px) { 
             .container {
-                max-width: 100%; /* Full width for the smallest screens */
-                padding: 15px;
+                width: 90vw; /* Ensure container remains square on the smallest screens */
+                height: 90vw;
+                padding: 15px; 
             }
             .insta-logo {
-                width: 80px; /* Further reduced size for smallest screens */
+                width: 80px; 
             }
             h1 {
                 font-size: 20px; /* Reduced font size for smaller screens */

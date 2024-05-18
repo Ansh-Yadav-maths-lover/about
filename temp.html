@@ -3,6 +3,10 @@
 <head>
     <title>Not on Instagram</title>
     <style>
+        :root {
+            --container-size: 500px; /* Default size of the container, adjust as needed */
+        }
+
         /* Basic Styling */
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -37,16 +41,15 @@
 
         /* Container Styling */
         .container {
-            width: 90vw;
-            max-width: 550px;
-            height: 90vw;
-            max-height: 550px;
-            padding: 40px;
+            width: var(--container-size);
+            height: var(--container-size);
+            padding: calc(var(--container-size) * 0.08);
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-            transition: transform 0.2s ease; 
+            transition: transform 0.2s ease;
+            box-sizing: border-box;
         }
 
         .container:hover {
@@ -55,9 +58,9 @@
 
         /* Instagram Logo Styling */
         .insta-logo {
-            width: 30%;
+            width: calc(var(--container-size) * 0.3);
             max-width: 130px; 
-            margin-bottom: 25px;
+            margin-bottom: calc(var(--container-size) * 0.05);
             animation: logo-pulse 1.8s infinite; 
             transition: filter 0.3s ease; 
         }
@@ -76,6 +79,7 @@
         .fade-in {
             opacity: 0;
             animation: fadeIn 1s ease-in forwards; 
+            font-size: calc(var(--container-size) * 0.05);
         }
 
         @keyframes fadeIn {
@@ -85,15 +89,15 @@
         /* Go Back Button Styling */
         button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 15px 30px; /* Increased padding for larger touch target */
+            margin-top: calc(var(--container-size) * 0.04);
+            padding: calc(var(--container-size) * 0.03) calc(var(--container-size) * 0.06);
             background-color: #007bff;
             color: white;
             text-decoration: none;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 18px; /* Increased font size for better readability */
+            font-size: calc(var(--container-size) * 0.04);
             transition: background-color 0.3s ease, transform 0.2s ease; 
         }
 
@@ -123,47 +127,17 @@
                 transform: translate(-100vw, 100vh) scale(2); /* Move diagonally to bottom left and scale up */
             }
         }
-        
+
         /* Media Queries for Responsiveness */
         @media (max-width: 768px) { 
-            .container {
-                width: 80vw; /* Ensure container remains square on smaller screens */
-                height: 80vw;
-                padding: 20px; 
-            }
-            .insta-logo {
-                width: 80px; 
-            }
-            h1 {
-                font-size: 24px;
-            }
-            p {
-                font-size: 16px;
-            }
-            button {
-                padding: 12px 24px; /* Slightly reduced padding for smaller screens */
-                font-size: 16px; /* Reduced font size for smaller screens */
+            :root {
+                --container-size: 300px; /* Adjust size for smaller screens */
             }
         }
 
         @media (max-width: 480px) { 
-            .container {
-                width: 90vw; /* Ensure container remains square on the smallest screens */
-                height: 90vw;
-                padding: 15px; 
-            }
-            .insta-logo {
-                width: 80px; 
-            }
-            h1 {
-                font-size: 20px; /* Reduced font size for smaller screens */
-            }
-            p {
-                font-size: 14px; /* Reduced font size for smaller screens */
-            }
-            button {
-                padding: 10px 20px; /* Slightly reduced padding for smaller screens */
-                font-size: 14px; /* Reduced font size for smaller screens */
+            :root {
+                --container-size: 250px; /* Adjust size for the smallest screens */
             }
         }
     </style>
